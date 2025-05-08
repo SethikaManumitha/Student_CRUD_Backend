@@ -27,21 +27,6 @@ public class StudentController {
         return new ResponseEntity<List<Student>>(studentService.allStudents(), HttpStatus.OK);
     }
 
-    @GetMapping("/nic")
-    public ResponseEntity<Optional<Student>> getSingleStudentByNIC(@RequestParam String nic) {
-        return new ResponseEntity<>(studentService.singleStudentByNIC(nic), HttpStatus.OK);
-    }
-
-    @GetMapping("/firstname")
-    public ResponseEntity<Optional<Student>> getSingleStudentByFirstName(@RequestParam String firstname) {
-        return new ResponseEntity<>(studentService.singleStudentByFirstName(firstname), HttpStatus.OK);
-    }
-
-    @GetMapping("/lastname")
-    public ResponseEntity<Optional<Student>> getSingleStudentByLastName(@RequestParam String lastname) {
-        return new ResponseEntity<>(studentService.singleStudentByLastName(lastname), HttpStatus.OK);
-    }
-
     @PutMapping("/update")
     public ResponseEntity<Student> updateStudent(@RequestParam String nic, @RequestBody Student student) {
         return studentService.updateStudent(nic, student);

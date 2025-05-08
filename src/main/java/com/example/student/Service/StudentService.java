@@ -24,20 +24,6 @@ public class StudentService {
         return studentRepo.findAll();
     }
 
-    public Optional<Student> singleStudentByNIC(String nic){
-        return studentRepo.findById(nic);
-    }
-
-
-    public Optional<Student> singleStudentByFirstName(String firstName){
-        return studentRepo.findStudentByFirstName(firstName);
-    }
-
-    public Optional<Student> singleStudentByLastName(String lastName){
-        return studentRepo.findStudentByLastName(lastName);
-    }
-
-
     public ResponseEntity<Student> updateStudent(String nic, Student updatedStudent) {
         Optional<Student> optionalStudent = studentRepo.findById(nic);
 
