@@ -19,7 +19,7 @@ public class AdminController {
     public ResponseEntity<String> login(@RequestParam String email,@RequestParam String password){
         boolean isAuthenticated = adminService.authenticate(email,password);
         if(isAuthenticated){
-            return ResponseEntity.ok("Login Successfull!");
+            return ResponseEntity.ok("Login Successful!");
         }else{
             return ResponseEntity.status(401).body("Invalid Credential");
         }
